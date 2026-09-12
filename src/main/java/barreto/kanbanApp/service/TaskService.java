@@ -38,7 +38,7 @@ public class TaskService {
         oldTask.setDescription(task.getDescription());
         oldTask.setUpdatedAt(LocalDateTime.now());
 
-        return oldTask;
+        return taskRepository.save(oldTask);
     }
 
     public Task deleteById(Long id) {
