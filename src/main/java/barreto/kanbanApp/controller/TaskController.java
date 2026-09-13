@@ -1,7 +1,10 @@
 package barreto.kanbanApp.controller;
 
+import barreto.kanbanApp.dto.MoveTaskDTO;
+import barreto.kanbanApp.dto.TaskRequestDTO;
 import barreto.kanbanApp.model.Task;
 import barreto.kanbanApp.service.TaskService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,14 +33,20 @@ public class TaskController {
     }
 
     @PostMapping
-    public ResponseEntity<Task> save(@RequestBody Task task) {
+    public ResponseEntity<Task> save(@RequestBody @Valid TaskRequestDTO task) {
         Task newTask = taskService.save(task);
         return ResponseEntity.status(HttpStatus.CREATED).body(newTask);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Task> update(@PathVariable Long id, @RequestBody Task task) {
+    public ResponseEntity<Task> update(@PathVariable Long id, @RequestBody @Valid TaskRequestDTO task) {
         Task updatedTask = taskService.update(id, task);
+        return ResponseEntity.ok(updatedTask);
+    }
+
+    @PatchMapping("/{id}/move")
+    public ResponseEntity<Task> move(@PathVariable Long id, @RequestBody @Valid MoveTaskDTO task) {
+        Task updatedTask = taskService.move(id, task);
         return ResponseEntity.ok(updatedTask);
     }
 
