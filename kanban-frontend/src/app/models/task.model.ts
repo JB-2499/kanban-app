@@ -13,3 +13,13 @@ export interface Task {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface TaskRequest {
+  title: string;
+  description?: string;
+  status: TaskStatus;
+}
+
+export interface MoveTaskRequest {
+  status: TaskStatus;
+}
