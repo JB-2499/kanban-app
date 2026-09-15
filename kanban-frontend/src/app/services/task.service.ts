@@ -27,6 +27,6 @@ export class TaskService {
     }
 
     move(id: number, dto: MoveTaskRequest) {
-        return this.http.patch(`${this.apiUrl}/${id}`, dto);
+        return this.http.patch(`${this.apiUrl}/${id}/move`, dto);
     }
 }
