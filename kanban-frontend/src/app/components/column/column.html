@@ -1,1 +1,8 @@
-<p>column works!</p>
+<div class="column">
+  <h2>{{ title }}</h2>
+  <div class="tasks">
+    @for (task of tasks; track task.id) {
+      <app-task-card [task]="task" />
+    }
+  </div>
+</div>
