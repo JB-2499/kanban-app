@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39cc3e69-3d73-437a-8732-209aa0e2aef4" name="Changes" comment="Corrigir erros de incompatibilidade.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kanban-frontend/src/app/components/board/board.ts" beforeDir="false" afterPath="$PROJECT_DIR$/kanban-frontend/src/app/components/board/board.ts" afterDir="false" />
-    </list>
+    <list default="true" id="39cc3e69-3d73-437a-8732-209aa0e2aef4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,6 +162,7 @@
     <MESSAGE value="Criar pastas separadas para front e back end's." />
     <MESSAGE value="Adicionar CorsConfig." />
     <MESSAGE value="Corrigir erros de incompatibilidade." />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrigir erros de incompatibilidade." />
+    <MESSAGE value="Conectar back e front." />
+    <option name="LAST_COMMIT_MESSAGE" value="Conectar back e front." />
   </component>
 </project>
