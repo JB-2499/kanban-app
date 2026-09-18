@@ -1,1 +1,5 @@
-<p>board works!</p>
+<div class="board">
+  <app-column title="A Fazer" [tasks]="todoTasks" />
+  <app-column title="Em Progresso" [tasks]="inProgressTasks" />
+  <app-column title="Concluído" [tasks]="doneTasks" />
+</div>
