@@ -3,6 +3,7 @@ package barreto.kanbanApp.controller;
 import barreto.kanbanApp.dto.MoveTaskDTO;
 import barreto.kanbanApp.dto.TaskRequestDTO;
 import barreto.kanbanApp.model.Task;
+import barreto.kanbanApp.model.TaskStatus;
 import barreto.kanbanApp.service.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/tasks")
@@ -21,9 +23,8 @@ public class TaskController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Task>> findAll() {
-        List<Task> tasks = taskService.findAll();
-        return ResponseEntity.ok(tasks);
+    public ResponseEntity<Map<TaskStatus, List<Task>>> findAll() {
+        return ResponseEntity.ok(taskService.findAll());
     }
 
     @GetMapping("/{id}")

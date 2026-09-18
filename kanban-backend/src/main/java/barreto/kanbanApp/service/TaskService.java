@@ -4,11 +4,14 @@ import barreto.kanbanApp.dto.MoveTaskDTO;
 import barreto.kanbanApp.dto.TaskRequestDTO;
 import barreto.kanbanApp.exception.ResourceNotFoundException;
 import barreto.kanbanApp.model.Task;
+import barreto.kanbanApp.model.TaskStatus;
 import barreto.kanbanApp.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class TaskService {
@@ -23,8 +26,19 @@ public class TaskService {
                 .orElseThrow(() -> new ResourceNotFoundException("Task com id " + id + " não encontrada."));
     }
 
-    public List<Task> findAll() {
-        return taskRepository.findAll();
+    public Map<TaskStatus, List<Task>> findAll() {
+        List<Task> tasks = taskRepository.findAll();
+        Map<TaskStatus, List<Task>> grouped = new LinkedHashMap<>();
+
+        for (TaskStatus status : TaskStatus.values()) {
+            grouped.put(status, new ArrayList<>());
+        }
+
+        for (Task task : tasks) {
+            grouped.get(task.getStatus()).add(task);
+        }
+
+        return grouped;
     }
 
     public Task save(TaskRequestDTO dto) {
