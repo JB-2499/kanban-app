@@ -3,9 +3,10 @@ import { Task, TaskStatus } from '../../models/task.model';
 import { TaskCard } from '../task-card/task-card';
 import { TaskService } from '../../services/task.service';
 import { FormsModule } from '@angular/forms';
+import { CdkDropList, CdkDrag, CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
-  imports: [TaskCard, FormsModule],
+  imports: [TaskCard, FormsModule, CdkDropList, CdkDrag],
   selector: 'app-column',
   styleUrl: './column.css',
   templateUrl: './column.html',
