@@ -16,6 +16,7 @@ export class Board implements OnInit {
   todoTasks: Task[] = [];
   inProgressTasks: Task[] = [];
   doneTasks: Task[] = [];
+  protected readonly TaskStatus = TaskStatus;
 
   ngOnInit() {
     console.log('ngOnInit chamado');

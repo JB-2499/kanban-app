@@ -1,5 +1,5 @@
 <div class="board">
-  <app-column title="A Fazer" [tasks]="todoTasks" />
-  <app-column title="Em Progresso" [tasks]="inProgressTasks" />
-  <app-column title="Concluído" [tasks]="doneTasks" />
+  <app-column title="A Fazer" [tasks]="todoTasks" [status]="TaskStatus.TO_DO" />
+  <app-column title="Em Progresso" [tasks]="inProgressTasks" [status]="TaskStatus.IN_PROGRESS" />
+  <app-column title="Concluído" [tasks]="doneTasks" [status]="TaskStatus.DONE" />
 </div>
