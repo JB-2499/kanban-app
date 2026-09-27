@@ -4,5 +4,28 @@
     @for (task of tasks; track task.id) {
       <app-task-card [task]="task" />
     }
+
+    @if (!showForm) {
+      <button (click)="showForm = true">+ Adicionar</button>
+    }
+
+    @if (showForm) {
+      <div class="form">
+        <input 
+          type="text" 
+          placeholder="Título da tarefa"
+          [(ngModel)]="newTitle" 
+        />
+        <input 
+          type="text" 
+          placeholder="Descrição (opcional)"
+          [(ngModel)]="newDescription" 
+        />
+        <div class="form-buttons">
+          <button (click)="addTask()">Adicionar</button>
+          <button (click)="showForm = false">Cancelar</button>
+        </div>
+      </div>
+    }
   </div>
 </div>

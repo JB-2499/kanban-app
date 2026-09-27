@@ -22,3 +22,58 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.form input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form input:focus {
+  border-color: #0079bf;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.form-buttons button:first-child {
+  background-color: #0079bf;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-buttons button:last-child {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #5e6c84;
+}
+
+button.add-btn {
+  margin-top: 8px;
+  background: transparent;
+  border: none;
+  color: #5e6c84;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px;
+  text-align: left;
+}
+
+button.add-btn:hover {
+  color: #172b4d;
+}

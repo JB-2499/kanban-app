@@ -2,9 +2,10 @@ import { Component, Input, inject } from '@angular/core';
 import { Task, TaskStatus } from '../../models/task.model';
 import { TaskCard } from '../task-card/task-card';
 import { TaskService } from '../../services/task.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  imports: [TaskCard],
+  imports: [TaskCard, FormsModule],
   selector: 'app-column',
   styleUrl: './column.css',
   templateUrl: './column.html',
