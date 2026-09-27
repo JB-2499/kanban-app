@@ -28,4 +28,15 @@ export class Board implements OnInit {
       this.cdr.detectChanges();
     });
   }
+
+  onStatusChanged(event: { task: Task, newStatus: TaskStatus }) {
+    this.todoTasks = this.todoTasks.filter(t => t.id !== event.task.id);
+    this.inProgressTasks = this.inProgressTasks.filter(t => t.id !== event.task.id);
+    this.doneTasks = this.doneTasks.filter(t => t.id !== event.task.id);
+
+    const updatedTask = { ...event.task, status: event.newStatus };
+    if (event.newStatus === TaskStatus.TO_DO) this.todoTasks.push(updatedTask);
+    if (event.newStatus === TaskStatus.IN_PROGRESS) this.inProgressTasks.push(updatedTask);
+    if (event.newStatus === TaskStatus.DONE) this.doneTasks.push(updatedTask);
+  }
 }

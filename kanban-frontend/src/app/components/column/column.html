@@ -2,7 +2,7 @@
   <h2>{{ title }}</h2>
   <div class="tasks">
     @for (task of tasks; track task.id) {
-      <app-task-card [task]="task" />
+      <app-task-card [task]="task" (statusChanged)="onStatusChanged($event)" />
     }
 
     @if (!showForm) {

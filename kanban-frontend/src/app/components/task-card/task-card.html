@@ -1,4 +1,9 @@
 <div class="task-card">
-    <h3>{{ task.title }}</h3>
-    <p>{{ task.description }}</p>
+  <h3>{{ task.title }}</h3>
+  <p>{{ task.description }}</p>
+  <select (change)="onStatusChange($event)">
+    <option value="TO_DO" [selected]="task.status === 'TO_DO'">A Fazer</option>
+    <option value="IN_PROGRESS" [selected]="task.status === 'IN_PROGRESS'">Em Progresso</option>
+    <option value="DONE" [selected]="task.status === 'DONE'">Concluído</option>
+  </select>
 </div>

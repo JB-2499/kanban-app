@@ -34,4 +34,8 @@ export class Column {
       this.showForm = false;
     });
   }
+
+    onStatusChanged(event: { task: Task, newStatus: TaskStatus }) {
+    this.tasks = this.tasks.filter(t => t.id !== event.task.id);
+  }
 }
