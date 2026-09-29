@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { Task, TaskStatus } from '../../models/task.model';
 import { TaskCard } from '../task-card/task-card';
 import { TaskService } from '../../services/task.service';
@@ -21,6 +21,7 @@ export class Column {
   @Input() title!: string;
   @Input() tasks!: Task[];
   @Input() status!: TaskStatus;
+  @Output() taskStatusChanged = new EventEmitter<{ task: Task, newStatus: TaskStatus }>();
 
   addTask() {
     this.taskService.create({
@@ -35,7 +36,8 @@ export class Column {
     });
   }
 
-    onStatusChanged(event: { task: Task, newStatus: TaskStatus }) {
+  onStatusChanged(event: { task: Task, newStatus: TaskStatus }) {
     this.tasks = this.tasks.filter(t => t.id !== event.task.id);
+    this.taskStatusChanged.emit(event);
   }
 }
