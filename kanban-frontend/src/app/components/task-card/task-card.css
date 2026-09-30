@@ -24,3 +24,24 @@
   color: #5e6c84;
   margin: 0;
 }
+
+.task-card select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #5e6c84;
+  padding: 2px 16px 2px 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%235e6c84' d='M5 7L1 3h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0px center;
+  outline: none;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.task-card select:hover {
+  color: #172b4d;
+}

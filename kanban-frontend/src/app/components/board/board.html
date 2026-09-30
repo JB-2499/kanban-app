@@ -1,20 +1,23 @@
 <div class="board">
-  <app-column 
-    title="A Fazer" 
-    [tasks]="todoTasks" 
-    [status]="TaskStatus.TO_DO"
-    (taskStatusChanged)="onStatusChanged($event)"
-  />
-  <app-column 
-    title="Em Progresso" 
-    [tasks]="inProgressTasks" 
-    [status]="TaskStatus.IN_PROGRESS"
-    (taskStatusChanged)="onStatusChanged($event)"
-  />
-  <app-column 
-    title="Concluído" 
-    [tasks]="doneTasks" 
-    [status]="TaskStatus.DONE"
-    (taskStatusChanged)="onStatusChanged($event)"
-  />
+  <h1 class="board-title">Kanban App</h1>
+  <div class="columns">
+    <app-column 
+      title="A Fazer" 
+      [tasks]="todoTasks" 
+      [status]="TaskStatus.TO_DO"
+      (taskStatusChanged)="onStatusChanged($event)"
+    />
+    <app-column 
+      title="Em Progresso" 
+      [tasks]="inProgressTasks" 
+      [status]="TaskStatus.IN_PROGRESS"
+      (taskStatusChanged)="onStatusChanged($event)"
+    />
+    <app-column 
+      title="Concluído" 
+      [tasks]="doneTasks" 
+      [status]="TaskStatus.DONE"
+      (taskStatusChanged)="onStatusChanged($event)"
+    />
+  </div>
 </div>
