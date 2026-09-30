@@ -10,6 +10,11 @@ services:
       - "5432:5432"
     networks:
       - kanban-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kanban_user -d kanban_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   backend:
     build: ./kanban-backend
@@ -20,7 +25,8 @@ services:
       SPRING_DATASOURCE_USERNAME: kanban_user
       SPRING_DATASOURCE_PASSWORD: kanban_pass
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - kanban-network
 
